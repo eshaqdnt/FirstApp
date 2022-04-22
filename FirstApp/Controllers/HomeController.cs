@@ -19,11 +19,15 @@ namespace FirstApp.Controllers
             return View();
         }
 
+        public IActionResult MessageList()
+        {
+            return View(MessageStorage.Massages);
+        }
         [HttpPost]
         public IActionResult Send(MessageModel model)
         {
             MessageStorage.Massages.Add(model);
-            return View();
+            return RedirectToAction("MessageList");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

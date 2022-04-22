@@ -1,0 +1,30 @@
+﻿@model List<MessageModel>
+@{
+    ViewData["Title"] = "پیام ها";
+    var counter = 1;
+}
+<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+    <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+        <table class="table">
+            <tr>
+                <td>#</td>
+                <td>نام و نام خانوادگی</td>
+                <td>شماره تلفن</td>
+                <td>موضوع</td>
+                <td>متن پیام</td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                <td>@counter</td>
+                <td>@item.FullName</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Subject</td>
+                <td>@item.Message</td>
+                </tr>
+                counter++;
+            }
+        </table>
+        <a class="text-center" asp-controller="Home" asp-action="Index">بازگشت</a>
+    </div>
+</div>
