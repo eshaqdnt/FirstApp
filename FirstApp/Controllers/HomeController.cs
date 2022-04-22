@@ -1,4 +1,5 @@
 ﻿using FirstApp.Models;
+using FirstApp.Storage;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -18,8 +19,10 @@ namespace FirstApp.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult Send(MessageModel model)
         {
+            MessageStorage.Massages.Add(model);
             return View();
         }
 
