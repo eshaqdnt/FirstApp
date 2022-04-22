@@ -18,7 +18,7 @@ namespace FirstApp.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Send(MessageModel model)
         {
             return View();
         }
